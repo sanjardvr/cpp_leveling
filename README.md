@@ -22,3 +22,49 @@ Note that no macOS setup script is currently provided; you can duplicate the Lin
 ## License
 - UNLICENSE for this repository (see `UNLICENSE.txt` for more details)
 - Premake is licensed under BSD 3-Clause (see included LICENSE.txt file for more details)
+
+<br>
+<br>
+<br>
+<br>
+
+# Setup on Mac
+after cloning repo, go to `./Script` and make a copy from `Setup-Linux.sh` 
+
+change
+```bash
+Vendor/Binaries/Premake/Linux/premake5
+```
+to this
+```bash
+Vendor/Binaries/Premake/macOS/premake5
+```  
+
+go to root of the project and run `make` to build via Makefile
+
+this will create a compiled App binary that you can run with 
+
+```bash
+./Binaries/macosx-x86_64/Debug/App/App
+```
+
+You can simplify build and run steps by creating new `run.sh` file
+with followings :
+
+```bash
+#!/bin/bash
+# Build the project
+make
+
+# Find and run the compiled App binary
+EXECUTABLE=$(find Binaries/macosx-x86_64/Debug -type f -name "App" | head -n 1)
+
+if [[ -x "$EXECUTABLE" ]]; then
+    echo "Running $EXECUTABLE..."
+    $EXECUTABLE
+else
+    echo "Executable not found! Check the build output."
+fi
+
+```
+
