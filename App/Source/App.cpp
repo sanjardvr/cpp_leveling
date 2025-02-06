@@ -1,6 +1,7 @@
-#include "Core/Core.h"
-
-int main()
-{
-	Core::PrintHelloWorld();
+#include <iostream>
+using namespace std;
+#include "../Students/Students.h"
+int main(){
+    cout << "Hello from App.cpp" << endl;
+    test();
 }
