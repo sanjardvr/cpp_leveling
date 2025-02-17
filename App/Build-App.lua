@@ -5,12 +5,24 @@ project "App"
    targetdir "Binaries/%{cfg.buildcfg}"
    staticruntime "off"
 
-   files { "Source/**.h", "Source/**.cpp", "Students/**.h", "Students/**.cpp" , "Professor/**.h", "Professor/**.cpp"}
+   files { "Source/**.h", 
+   "Source/**.cpp", 
+   "Students/**.h", 
+   "Students/**.cpp" , 
+   "Professor/**.h", 
+   "Professor/**.cpp",
+   "Unic/**.h", 
+   "Unic/**.cpp",
+   "Staff/**.h", 
+   "Staff/**.cpp",
+    }
 
    includedirs
    {
       "Students",
       "Professor",
+      "Unic",
+      "Staff",
 	  "../Core/Source"
    }
 
