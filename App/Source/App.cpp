@@ -6,7 +6,7 @@ using namespace std;
 #include "../Unic/Unic.h"
 int main(){
     student();
-    professor();
-    unic();
-    staff();
+    //professor();
+   // unic();
+   //staff();
 }

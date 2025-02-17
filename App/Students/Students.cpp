@@ -4,42 +4,16 @@
 #include "Students.h"
 #include "../../Core/Utils/idGenerator.h"
 
-class Student
+
+void Student::createStudent(Student obj, std::vector<std::string> dep)
 {
-public:
-	std::string firstName;
-	std::string lastName;
-	int age;
-	int public_id;
-	int department;
-	bool isActive;
-	Student() //constructor
-	{
-		isActive = true;
-		password = private_id;
-		contractSum = 0;
-	}
-	void creteStudent(Student obj, std::vector<std::string> vec);
-
-private:
-	int private_id;
-	int password;
-
-protected:
-	float contractSum;
-	int phoneNumber;
-	std::string address;
-};
-
-void Student::creteStudent(Student obj, std::vector<std::string> dep)
-{
-	std::cout << "What is student's first name :";
+	std::cout << "What is student's first name : ";
 	std::cin >> obj.firstName;
 
-	std::cout << "What is student's last name :";
+	std::cout << "What is student's last name : ";
 	std::cin >> obj.lastName;
 
-	std::cout << "What is student's age :";
+	std::cout << "What is student's age : ";
 	std::cin >> obj.age;
 
 	obj.public_id = idGenrator("25", 1);
@@ -65,5 +39,5 @@ void student()
 {
 	std::vector<std::string> dep = {"CSI", "BUS", "MED"};
 	Student mainObj;
-	mainObj.creteStudent(mainObj, dep);
+	mainObj.createStudent(mainObj, dep);
 }
