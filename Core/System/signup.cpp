@@ -1,20 +1,23 @@
 #include <iostream>
 #include <map>
 using namespace std;
-
+#include "../Source/Core/database.h"
 void signup()
 {
     string email;
-    int password;
-    map<string, int> users = {{"admin@example.com", 12345678}};
+    string password;
     cout << "Enter email : ";
     cin >> email;
 
-    if (users.count(email) != 1)
+    if (usersDatabase.count(email) != 1)
     {
         cout << "Enter password : ";
         cin >> password;
-        users.insert({email, password});
+
+        usersDatabase.insert({email, password});
+        cout << "\033[1;32m";
+        cout << "You have successfully registered!" << endl;
+        cout << "\033[0m";
     }
     else
     {
