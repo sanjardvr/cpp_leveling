@@ -5,12 +5,13 @@ project "Core"
    targetdir "Binaries/%{cfg.buildcfg}"
    staticruntime "off"
 
-   files { "Source/**.h", "Source/**.cpp" , "Urils/**.h", "Utils/**.cpp" }
+   files { "Source/**.h", "Source/**.cpp" , "Urils/**.h", "Utils/**.cpp",  "System/**.h", "System/**.cpp" }
 
    includedirs
    {
       "Source",
-      "Utils"
+      "Utils",
+      "System"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
