@@ -4,32 +4,7 @@
 #include "Unic.h"
 #include "../../Core/Utils/idGenerator.h"
 
-class Unic
-{
-public:
-	std::string firstName;
-	std::string lastName;
-	int age;
-	int public_id;
-	int department;
-	bool isActive;
-	Unic() //constructor
-	{
-		isActive = true;
-		password = private_id;
-		salary = 0;
-	}
-	void creteUnic(Unic obj, std::vector<std::string> vec);
 
-private:
-	int private_id;
-	int password;
-
-protected:
-	float salary;
-	int phoneNumber;
-	std::string address;
-};
 
 void Unic::creteUnic(Unic obj, std::vector<std::string> dep)
 { 
@@ -42,7 +17,7 @@ void Unic::creteUnic(Unic obj, std::vector<std::string> dep)
 	std::cout << "What is Unic's age :";
 	std::cin >> obj.age;
 
-	obj.public_id = idGenrator("25", 2);
+	obj.public_id = idGenrator("25", 4);
 	std::cout << "Here is the public ID of the Unic : " << obj.public_id << std::endl;
 
 	std::cout << "Select your department and type its number : \n 1.CSI \t 2.BIS \t 3.MED" << std::endl;

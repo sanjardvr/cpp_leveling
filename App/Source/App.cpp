@@ -4,9 +4,10 @@ using namespace std;
 #include "../Professor/Professor.h"
 #include "../Staff/Staff.h"
 #include "../Unic/Unic.h"
-int main(){
-    student();
+int main()
+{
+    //student();
     //professor();
-   // unic();
-   //staff();
+    unic();
+    //staff();
 }

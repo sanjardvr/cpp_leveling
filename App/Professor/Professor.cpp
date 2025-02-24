@@ -4,33 +4,6 @@
 #include "Professor.h"
 #include "../../Core/Utils/idGenerator.h"
 
-class Professor
-{
-public:
-	std::string firstName;
-	std::string lastName;
-	int age;
-	int public_id;
-	int department;
-	bool isActive;
-	Professor() //constructor
-	{
-		isActive = true;
-		password = private_id;
-		salary = 0;
-	}
-	void creteProfessor(Professor obj, std::vector<std::string> vec);
-
-private:
-	int private_id;
-	int password;
-
-protected:
-	float salary;
-	int phoneNumber;
-	std::string address;
-};
-
 void Professor::creteProfessor(Professor obj, std::vector<std::string> dep)
 { 
 	std::cout << "What is professor's first name : ";
@@ -39,7 +12,7 @@ void Professor::creteProfessor(Professor obj, std::vector<std::string> dep)
 	std::cout << "What is professor's last name : ";
 	std::cin >> obj.lastName;
 
-	std::cout << "What is professor's age :";
+	std::cout << "What is professor's age : ";
 	std::cin >> obj.age;
 
 	obj.public_id = idGenrator("25", 2);
