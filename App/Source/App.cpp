@@ -2,6 +2,7 @@
 using namespace std;
 #include <string>
 #include "../../Core/Source/Core/Core.h"
+#include "../../Core/Utils/controls.h"
 #include "../Students/Students.h"
 #include "../Professor/Professor.h"
 #include "../Staff/Staff.h"
@@ -16,9 +17,10 @@ int main()
     // unic(); //?superuser
     if (Core::start())
     {
-        staff();     //?moderator
-        professor(); //?admin
-        student();   //?user
+        controlPanel();
+        // staff();     //?moderator
+        // professor(); //?admin
+        // student();   //?user
     }
     else
     {
