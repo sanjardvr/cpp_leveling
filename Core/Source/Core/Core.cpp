@@ -10,9 +10,9 @@ namespace Core {
 
 	void PrintHelloWorld()
 	{
-		std::cout << "Hello World!\n";
-		system("clear");
-		systemEnter();
+		//std::cout << "Hello World!\n";
+		//system("clear");
+		//systemEnter();
 	}
 
 }
