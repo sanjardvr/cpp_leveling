@@ -3,38 +3,51 @@
 #include "../System/signup.h"
 using namespace std;
 
-void systemEnter() {
+bool systemEnter()
+{
     int enter_choice;
-   
-    bool a,b;
-    cout << "Welcome to University Management System admin panel !!!" << endl;
 
-    while (true) { // Keep looping until login is successful
+    cout << "Welcome to University Management System admin panel !!!" << endl;
+    while (true)
+    { 
         cout << "\nPlease Signup/Login\n";
         cout << "1. Sign up\n2. Login\n";
+        cout << "Enter your choice: ";
+
         cin >> enter_choice;
 
-        switch (enter_choice) {
-            case 1:
-                if(signup()){
-                    break;
-                }
-                break;
-            case 2:
-                if(login()){
-                    goto out_of_choice;
-                    break;
-                }
-                break;
-            default:
-                cout << endl;
-                cout << "Invalid choice! Please try again.\n";
-                break;
+        // Check for input failure
+        if (cin.fail()) 
+        {
+            cin.clear();  // Clear error flag
+            cin.ignore(10000, '\n');  // Ignore invalid input
+            cout << "Invalid input! Please enter a valid number.\n";
+            continue;  // Restart loop
         }
-        
+
+        switch (enter_choice)
+        {
+        case 1:
+            if (signup())
+            {
+                break;
+            }
+            break;
+        case 2:
+            if (login())
+            {
+                goto out_of_choice;
+            }
+            break;
+        default:
+            cout << "Invalid choice! Please try again.\n";
+            break;  
+        }
     }
-    out_of_choice:
+
+out_of_choice:
     cout << "\033[1;32m";
     cout << "You have successfully entered the system!" << endl;
     cout << "\033[0m";
+    return true;
 }

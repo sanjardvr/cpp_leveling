@@ -2,6 +2,6 @@
 
 namespace Core {
 
-	void PrintHelloWorld();
+	bool start();
 
 }

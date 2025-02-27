@@ -2,17 +2,19 @@
 #include <iostream>
 #include "../../Utils/systemEnter.h"
 
-//for core components
-//will be edited in the futute by adding database connections, third-app connections amd etc...
+// for core components
+// will be edited in the futute by adding database connections, third-app connections amd etc...
 
+namespace Core
+{
 
-namespace Core {
-
-	void PrintHelloWorld()
+	bool start()
 	{
-		//std::cout << "Hello World!\n";
-		//system("clear");
-		//systemEnter();
+		system("clear");
+		if (systemEnter())
+		{
+			return true;
+		}
 	}
 
 }

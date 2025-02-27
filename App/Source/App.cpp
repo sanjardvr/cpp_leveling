@@ -7,16 +7,21 @@ using namespace std;
 #include "../Staff/Staff.h"
 #include "../Unic/Unic.h"
 
-void hello(){
-    cout <<  "You entered A" << endl;
+void hello()
+{
+    cout << "You entered A" << endl;
 }
 int main()
 {
     // unic(); //?superuser
-    //staff(); //?moderator
-    //professor(); //?admin
-    //student(); //?user
-    // Core::PrintHelloWorld();
-            
+    if (Core::start())
+    {
+        staff();     //?moderator
+        professor(); //?admin
+        student();   //?user
+    }
+    else
+    {
+        throw runtime_error("Access was denied!");
+    }
 }
-
