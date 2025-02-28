@@ -8,19 +8,35 @@ using namespace std;
 #include "../Staff/Staff.h"
 #include "../Unic/Unic.h"
 
-void hello()
-{
-    cout << "You entered A" << endl;
-}
+    
 int main()
 {
-    // unic(); //?superuser
+    logout:
     if (Core::start())
     {
-        controlPanel();
-        // staff();     //?moderator
-        // professor(); //?admin
-        // student();   //?user
+        switch (controlPanel())
+        {
+        case 1:
+           unic(); //superuser
+            break;
+        case 2:
+           staff(); // moderator
+            break;
+        case 3:
+            professor(); //admin
+            break;
+        case 4:
+            student(); //user
+            break;
+        case 5:
+           goto logout; 
+           break;
+        case 6:
+           exit(0);
+            break;
+        default:
+            break;
+        }
     }
     else
     {
