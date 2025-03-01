@@ -19,7 +19,8 @@ public:
 		password = private_id;
 	}
 	void showProfile(Unic obj);
-	
+	void login(Unic obj);
+	void createUser(Unic obj);
 	// void setNumbers(Unic obj);
-};
+}; 
 void unic();
