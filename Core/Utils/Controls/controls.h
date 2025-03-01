@@ -1,21 +1,27 @@
+
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 class Controls
 {
 public:
-    int commandNumber;
-    void defaultCommands()
-    {
-        cout << "Go back ◀️ : 5" << endl;
-        cout << "Exit the program ⛔: 6" << endl;
-    }
-}
+    vector<string> commandOutputs = {"LogOut", "Exit Program"};
+    vector<int> userChoice;
+    string title = "--------Control Panel--------";
 
+   int controlPanel(Controls obj);
+private:
+   // function to generate list of commands
+   void
+   commandPanelGenerator(vector<string> vec)
+   {
+       for (int i = 0; i < vec.size(); i++)
+       {
+           cout << vec[i] << ": " << i + 1 << endl;
+           userChoice.push_back(i+1);
+       }
+   }
+};
 
-
-void commandNumberGenerator()
-{
-    
-}

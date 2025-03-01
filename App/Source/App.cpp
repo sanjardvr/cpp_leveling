@@ -2,9 +2,10 @@
 using namespace std;
 #include <string>
 #include <vector>
+
+#include "../../Core/Utils/Controls/controls.h"
+
 #include "../../Core/Source/Core/Core.h"
-#include "../../Core/Utils/commandPanelGenerator.h"
-// #include "../../Core/Utils/controls.h"
 #include "../Students/Students.h"
 #include "../Professor/Professor.h"
 #include "../Staff/Staff.h"
@@ -13,11 +14,12 @@ using namespace std;
     
 int main()
 {   
-    vector<string> outputs = {"Enter module (University 🏫)", "Enter module (Staff 👨‍💼)", "Enter module (Proffesor 👩‍🏫)", "Enter module (Student 👩‍🏫)" , "Log Out ◀️" , "Exit the program ⛔"};
-    cout << "--------Control Panel--------"<< endl;
-    
+    vector<string> outputs = {"Enter module (University)", "Enter module (Staff)", "Enter module (Proffesor)", "Enter module (Student)"};
 
-    commandPanelGenerator(outputs);
+    Controls obj;
+    cout << obj.title << endl;
+    obj.commandOutputs.insert(obj.commandOutputs.begin() , outputs.begin() , outputs.end());
+    obj.controlPanel(obj);
 
     // logout:
     // if (Core::start())
