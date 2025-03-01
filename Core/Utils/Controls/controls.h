@@ -1,4 +1,5 @@
-
+#ifndef CONTROL
+#define CONTROL
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,6 +13,11 @@ public:
     string title = "--------Control Panel--------";
 
    int controlPanel(Controls obj);
+
+   void listAllCommands(vector<string> vec)
+   {
+    commandOutputs.insert(commandOutputs.begin() , vec.begin() , vec.end());
+   }
 private:
    // function to generate list of commands
    void
@@ -25,3 +31,4 @@ private:
    }
 };
 
+#endif //CONTROL

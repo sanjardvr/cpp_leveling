@@ -1,5 +1,8 @@
 #include <iostream>
+#include <vector>
+#include <string>
 #include "Unic.h"
+#include "../../Core/Source/Core/database.h"
 using namespace std;
 void Unic::showProfile(Unic obj)
 {
@@ -10,12 +13,18 @@ void Unic::showProfile(Unic obj)
     cout << "Number of Students : " << 3822 << endl;  // obj.studentsNumber << endl;
 }
 
-// void Unic::setNumbers(Unic obj){
-//     obj.staffNumber =
-// }
+void Unic::login(Unic obj)
+{
+    
+}
 
 void unic()
 {
+    vector<string> commands = {"Login" , "Create User"};
     Unic mainObj;
-    mainObj.showProfile(mainObj);
+    Controls obj;
+
+    cout << mainObj.title << endl;
+    mainObj.listAllCommands(commands);
+    mainObj.controlPanel(obj);
 }

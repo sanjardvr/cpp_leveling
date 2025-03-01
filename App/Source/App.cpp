@@ -15,16 +15,14 @@ using namespace std;
 int main()
 {   
     vector<string> outputs = {"Enter module (University)", "Enter module (Staff)", "Enter module (Proffesor)", "Enter module (Student)"};
-
-    Controls obj;
-    cout << obj.title << endl;
-    obj.commandOutputs.insert(obj.commandOutputs.begin() , outputs.begin() , outputs.end());
-    obj.controlPanel(obj);
-
+    unic();
+    // Controls obj;
+    // cout << obj.title << endl;
+    // obj.listAllCommands(outputs);
     // logout:
     // if (Core::start())
     // {
-    //     switch (controlPanel())
+    //     switch (obj.controlPanel(obj))
     //     {
     //     case 1:
     //        unic(); //superuser

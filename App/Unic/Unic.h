@@ -1,7 +1,5 @@
-// #include "../Students/Students.h"
-//  #include "../Professor/Professor.h"
-//  #include "../Staff/Staff.h"
-class Unic
+#include "../../Core/Utils/Controls/controls.h"
+class Unic : public Controls
 {
 private:
 	int private_id;
@@ -15,11 +13,13 @@ public:
 	int staffNumber;
 	int studentsNumber;
 	int profsNumber;
+	string title = "--------University Panel--------"; //? C++ OOP Runtime Polymorphism with Data Members
 	Unic() // constructor
 	{
 		password = private_id;
 	}
 	void showProfile(Unic obj);
+	
 	// void setNumbers(Unic obj);
 };
 void unic();
