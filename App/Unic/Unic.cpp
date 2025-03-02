@@ -4,16 +4,59 @@
 #include "Unic.h"
 #include "../../Core/Source/Core/database.h"
 using namespace std;
-void Unic::showProfile(Unic obj)
+
+
+void showProfile(Unic obj)
 {
-    cout << "-----Profile Info-----" << endl;
-    cout << "Viewing as a University access" << endl;
-    cout << "Number of Staffs : " << 15 << endl;      // obj.staffNumber << endl;
-    cout << "Number of Proffessors : " << 34 << endl; // obj.profsNumber << endl;
-    cout << "Number of Students : " << 3822 << endl;  // obj.studentsNumber << endl;
+    cout << "\033[1;33m";
+    cout << "-----Existing Profiles-----" << endl;
+
+    for (auto k : univerDatabase)
+    {
+        cout << k.first << " : " << k.second << endl;
+    }
+
+    cout << "\033[0m";
 }
 
-void Unic::login(Unic obj)
+
+void secondCardView()
+{
+    vector<string> commands = {"Show Profiles", "Add User", "Delete User", "Change User", "Edit Other Modules", "Go Back", "Exit"};
+    Unic mainObj;
+    Controls obj;
+
+    cout << mainObj.title << endl;
+    mainObj.listAllCommands(commands);
+    switch (mainObj.controlPanel(obj))
+    {
+    case 1:
+        showProfile(mainObj);
+        break;
+    case 2:
+        cout << "end";
+        break;
+    case 3:
+        cout << "end";  
+        break;
+    case 4:
+        cout << "end";
+        break;
+    case 5:
+        cout << "end";
+        break;
+    case 6:
+        cout << "end";
+        break;
+    case 7:
+        cout << "end";  
+        break;
+    default:
+        break;
+    }
+}
+
+void login(Unic obj)
 {
     cout << endl;
     string email;
@@ -32,6 +75,7 @@ void Unic::login(Unic obj)
                 cout << "\033[1;32m";
                 cout << "You have enterd the system" << endl;
                 cout << "\033[0m";
+                secondCardView();
                 break;
             }
             else
@@ -49,15 +93,14 @@ void Unic::login(Unic obj)
         cout << "\033[0m";
         cout << endl;
         unic();
-        
     }
 }
 
-void Unic::createUser(Unic obj)
+void createUser(Unic obj)
 {
     string email;
     string password;
-    cout << "-----User creation proccess-----"<<endl;
+    cout << "-----User creation proccess-----" << endl;
     cout << "Enter email : ";
     cin >> email;
 
@@ -67,9 +110,12 @@ void Unic::createUser(Unic obj)
         cin >> password;
 
         univerDatabase.insert({email, password});
-        cout << "\033[1;32m";
+        obj.setPassword(password);
+                cout
+            << "\033[1;32m";
         cout << "User created successfully!" << endl;
         cout << "\033[0m";
+        unic();
     }
     else
     {
@@ -79,6 +125,7 @@ void Unic::createUser(Unic obj)
         unic();
     }
 }
+
 void unic()
 {
     vector<string> commands = {"Login", "Create User"};
@@ -90,10 +137,10 @@ void unic()
     switch (mainObj.controlPanel(obj))
     {
     case 1:
-        mainObj.login(mainObj);
+        login(mainObj);
         break;
     case 2:
-        mainObj.createUser(mainObj);
+        createUser(mainObj);
         break;
     default:
         break;

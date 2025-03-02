@@ -2,7 +2,7 @@
 using namespace std;
 #include <string>
 #include <vector>
-
+#include <map>
 #include "../../Core/Utils/Controls/controls.h"
 
 #include "../../Core/Source/Core/Core.h"
@@ -11,9 +11,8 @@ using namespace std;
 #include "../Staff/Staff.h"
 #include "../Unic/Unic.h"
 
-    
 int main()
-{   
+{
     vector<string> outputs = {"Enter module (University)", "Enter module (Staff)", "Enter module (Proffesor)", "Enter module (Student)"};
     unic();
     // Controls obj;
@@ -37,7 +36,7 @@ int main()
     //         student(); //user
     //         break;
     //     case 5:
-    //        goto logout; 
+    //        goto logout;
     //        break;
     //     case 6:
     //        exit(0);

@@ -2,25 +2,19 @@
 class Unic : public Controls
 {
 private:
-	int private_id;
-	int password;
-	// Professor profObj;
-	// Staff staffObj;
-	// Student studentObj;
-
+	string password;
 public:
 	std::string email;
-	int staffNumber;
-	int studentsNumber;
-	int profsNumber;
 	string title = "--------University Panel--------"; //? C++ OOP Runtime Polymorphism with Data Members
 	Unic() // constructor
 	{
-		password = private_id;
+		password = "";
 	}
-	void showProfile(Unic obj);
-	void login(Unic obj);
-	void createUser(Unic obj);
-	// void setNumbers(Unic obj);
+	void setPassword(string pswrd){
+		password = pswrd;
+	}
+	string getPassword(){
+		return password;
+	}
 }; 
 void unic();
