@@ -15,6 +15,8 @@ project "App"
    "Unic/**.cpp",
    "Staff/**.h", 
    "Staff/**.cpp",
+   "Labs/**.cpp",
+   "Labs/**.h"
     }
 
    includedirs
@@ -23,6 +25,7 @@ project "App"
       "Professor",
       "Unic",
       "Staff",
+      "Labs",
 	  "../Core/Source"
    }
 

@@ -5,7 +5,7 @@
 #include "../../Core/Source/Core/database.h"
 using namespace std;
 
-
+void secondCardView();
 void showProfile(Unic obj)
 {
     cout << "\033[1;33m";
@@ -17,12 +17,18 @@ void showProfile(Unic obj)
     }
 
     cout << "\033[0m";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    
+    std::cout << "Press Enter to continue...";
+    std::cin.get();  // Waits for the user to press Enter
+
+    secondCardView();
 }
 
 
 void secondCardView()
 {
-    vector<string> commands = {"Show Profiles", "Add User", "Delete User", "Change User", "Edit Other Modules", "Go Back", "Exit"};
+    vector<string> commands = {"Show Profiles", "Add User", "Delete User", "Change User", "Edit Other Modules", "Go Back"};
     Unic mainObj;
     Controls obj;
 
@@ -31,8 +37,8 @@ void secondCardView()
     switch (mainObj.controlPanel(obj))
     {
     case 1:
+        system("clear");
         showProfile(mainObj);
-        break;
     case 2:
         cout << "end";
         break;
@@ -49,7 +55,7 @@ void secondCardView()
         cout << "end";
         break;
     case 7:
-        cout << "end";  
+        cout << "end";
         break;
     default:
         break;

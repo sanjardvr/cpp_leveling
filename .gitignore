@@ -1,7 +1,7 @@
 # Directories
 .vs/
 Binaries/
-
+App/Labs
 # Files
 *.vcxproj
 *.vcxproj.user

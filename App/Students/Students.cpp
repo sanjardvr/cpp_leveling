@@ -13,7 +13,7 @@ void Student::createStudent(Student obj, std::vector<std::string> dep)
 	std::cout << "What is student's last name : ";
 	std::cin >> obj.lastName;
 
-	std::cout << "What is student's age : ";
+	std::cout << "What is astudent's age : ";
 	std::cin >> obj.age;
 
 	obj.public_id = idGenrator("25", 1);
