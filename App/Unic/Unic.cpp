@@ -54,9 +54,6 @@ void secondCardView()
     case 6:
         cout << "end";
         break;
-    case 7:
-        cout << "end";
-        break;
     default:
         break;
     }

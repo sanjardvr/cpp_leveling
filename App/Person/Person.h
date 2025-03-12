@@ -3,8 +3,8 @@
 class Person
 {
 private:
-	int private_id;
-	int password;
+	std::string private_id;
+	std::string password;
 
 protected:
 	int phoneNumber;
@@ -14,7 +14,7 @@ public:
 	std::string firstName;
 	std::string lastName;
 	int age;
-	int public_id;
+	std::string public_id;
 	bool isActive;
 
 	Person() //constructor

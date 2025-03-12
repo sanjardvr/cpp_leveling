@@ -6,13 +6,14 @@ bool login()
 {
     string email;
     string password;
+    int attempts = 3;
     cout << "-----LogIn proccess-----" << endl;
     cout << "Enter email : ";
     cin >> email;
 
     if (usersDatabase.count(email) != 0)
     {
-        while (true)
+        while (attempts > 0)
         {
             cout << "Enter password : ";
             cin >> password;
@@ -21,12 +22,13 @@ bool login()
                 return true;
             }
             else
-            {
-                cout << "\033[1;31m";
-                cout << "Wrong password!" << endl;
-                cout << "\033[0m";
+            {   
+                attempts--;
+                cout << "\033[1;31mWrong password! Attempts left: " << attempts << "\033[0m" << endl;
             }
         }
+        cout << "\033[1;31mToo many failed attempts!\033[0m" << endl;
+        return false;
     }
     else
     {

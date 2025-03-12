@@ -16,6 +16,7 @@ public:
 
    void listAllCommands(vector<string> vec)
    {
+    commandOutputs.clear();
     commandOutputs.insert(commandOutputs.begin() , vec.begin() , vec.end());
    }
 private:
