@@ -4,8 +4,12 @@
 #include <map>
 #include <string>
 
-// Declare global map (No initialization here!)
-extern std::map<std::string, std::string> usersDatabase;
+struct User {
+    std::string email;
+    std::string password;
+};
 
-extern std::map<std::string, std::string> univerDatabase;
-#endif // DATABASE_H
+extern std::map<std::string, User> usersDatabase;
+extern std::map<std::string, User> univerDatabase;
+
+#endif
