@@ -5,62 +5,66 @@
 #include "../../Core/Source/Core/database.h"
 using namespace std;
 
-void secondCardView();
-void showProfile(Unic obj)
-{
-    cout << "\033[1;33m";
-    cout << "-----Existing Profiles-----" << endl;
+// void showProfile(Unic obj)
+// {
+//     cout << "\033[1;33m";
+//     cout << "-----Existing Profiles-----" << endl;
 
-    for (auto k : univerDatabase)
-    {
-        cout << k.first << " : " << k.second << endl;
-    }
+//     for (auto k : univerDatabase)
+//     {
+//         cout << k.first << " : " << k.second << endl;
+//     }
 
-    cout << "\033[0m";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//     cout << "\033[0m";
+//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     
-    std::cout << "Press Enter to continue...";
-    std::cin.get();  // Waits for the user to press Enter
+//     std::cout << "Press Enter to continue...";
+//     std::cin.get();  // Waits for the user to press Enter
 
-    secondCardView();
+//     secondCardView();
+// }
+
+
+// void secondCardView()
+// {
+//     vector<string> commands = {"Show Profiles", "Add User", "Delete User", "Change User", "Edit Other Modules", "Go Back"};
+//     Unic mainObj;
+//     Controls obj;
+
+//     cout << mainObj.title << endl;
+//     mainOclearbj.listAllCommands(commands);
+//     switch (mainObj.controlPanel(obj))
+//     {
+//     case 1:
+//         system("clear");
+//         showProfile(mainObj);
+//     case 2:
+//         cout << "end";
+//         break;
+//     case 3:
+//         cout << "end";  
+//         break;
+//     case 4:
+//         cout << "end";
+//         break;
+//     case 5:
+//         cout << "end";
+//         break;
+//     case 6:
+//         cout << "end";
+//         break;
+//     default:
+//         break;
+//     }
+// }
+
+void showProfile(){
+    cout << "showProfile function ran" << endl;
 }
 
-
-void secondCardView()
+void login()
 {
-    vector<string> commands = {"Show Profiles", "Add User", "Delete User", "Change User", "Edit Other Modules", "Go Back"};
-    Unic mainObj;
-    Controls obj;
-
-    cout << mainObj.title << endl;
-    mainObj.listAllCommands(commands);
-    switch (mainObj.controlPanel(obj))
-    {
-    case 1:
-        system("clear");
-        showProfile(mainObj);
-    case 2:
-        cout << "end";
-        break;
-    case 3:
-        cout << "end";  
-        break;
-    case 4:
-        cout << "end";
-        break;
-    case 5:
-        cout << "end";
-        break;
-    case 6:
-        cout << "end";
-        break;
-    default:
-        break;
-    }
-}
-
-void login(Unic obj)
-{
+    Unic obj;
     cout << endl;
     string email;
     string password;
@@ -73,12 +77,12 @@ void login(Unic obj)
         {
             cout << "Enter password : ";
             cin >> password;
-            if (password == univerDatabase.at(email))
+            if (password == univerDatabase.at(email).password)
             {
                 cout << "\033[1;32m";
                 cout << "You have enterd the system" << endl;
                 cout << "\033[0m";
-                secondCardView();
+                // secondCardView();
                 break;
             }
             else
@@ -99,8 +103,9 @@ void login(Unic obj)
     }
 }
 
-void createUser(Unic obj)
+void createUser()
 {
+    Unic obj;
     string email;
     string password;
     cout << "-----User creation proccess-----" << endl;
@@ -112,7 +117,7 @@ void createUser(Unic obj)
         cout << "Enter password : ";
         cin >> password;
 
-        univerDatabase.insert({email, password});
+        univerDatabase.insert({email, User{email, password}});
         obj.setPassword(password);
                 cout
             << "\033[1;32m";
@@ -131,21 +136,12 @@ void createUser(Unic obj)
 
 void unic()
 {
-    vector<string> commands = {"Login", "Create User"};
-    Unic mainObj;
-    Controls obj;
-
-    cout << mainObj.title << endl;
-    mainObj.listAllCommands(commands);
-    switch (mainObj.controlPanel(obj))
-    {
-    case 1:
-        login(mainObj);
-        break;
-    case 2:
-        createUser(mainObj);
-        break;
-    default:
-        break;
-    }
+    vector<pair<string, function<void()>>> commands = {
+        {"Show Profiles", showProfile},
+        {"Login", login},
+        {"Create User", createUser},
+        };
+    
+    Unic unic("Admin Panel", commands);
+    unic.display();
 }

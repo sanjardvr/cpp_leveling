@@ -15,7 +15,7 @@ bool signup()
         cout << "Enter password : ";
         cin >> password;
 
-        usersDatabase.insert({email, password});
+        usersDatabase.insert({email, User{email, password}});
         cout << "\033[1;32m";
         cout << "You have successfully registered!" << endl;
         cout << "\033[0m";

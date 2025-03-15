@@ -1,12 +1,13 @@
 #include "../../Core/Utils/Controls/controls.h"
-class Unic : public Controls
+#include "../../Core/System/cardView.h"
+class Unic : public CardView
 {
 private:
 	string password;
 public:
 	std::string email;
-	string title = "--------University Panel--------"; //? C++ OOP Runtime Polymorphism with Data Members
-	Unic() // constructor
+	Unic(){};
+	Unic(string title , vector < pair < string , function <void() >>> commands):CardView(title , commands) // constructor
 	{
 		password = "";
 	}

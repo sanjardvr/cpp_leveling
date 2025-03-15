@@ -17,7 +17,7 @@ bool login()
         {
             cout << "Enter password : ";
             cin >> password;
-            if (password == usersDatabase.at(email))
+            if (password == usersDatabase.at(email).password)
             {
                 return true;
             }

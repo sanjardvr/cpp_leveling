@@ -4,8 +4,9 @@ using namespace std;
 
 #include "controls.h"
 
-int Controls::controlPanel(Controls obj)
+int Controls::controlPanel()
 {
+    Controls obj;
     int choice;
     while (true)
     {
@@ -13,7 +14,7 @@ int Controls::controlPanel(Controls obj)
         cout << "Enter command: ";
         cin >> choice;
 
-        if (cin.fail())
+        if (cin.fail() || (choice > commandOutputs.size() || choice <= 0))
         {
             cin.clear();             // Clear error flag
             cin.ignore(10000, '\n'); // Ignore invalid input

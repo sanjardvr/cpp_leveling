@@ -12,11 +12,10 @@ public:
     vector<int> userChoice;
     string title = "--------Control Panel--------";
 
-   int controlPanel(Controls obj);
+   int controlPanel();
 
    void listAllCommands(vector<string> vec)
    {
-    commandOutputs.clear();
     commandOutputs.insert(commandOutputs.begin() , vec.begin() , vec.end());
    }
 private:
